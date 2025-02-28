@@ -1,8 +1,338 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-<head><title>Sulaiman Portfolio</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Task</title>
+  
+<style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 20px;
+    background: #f5f8ff;
+  }
+  
+  .hero-content {
+    max-width: 50%;
+  }
+  
+  .hero-image {
+
+    padding: 0px 30px;
+  }
+
+
+   
+  .hero h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    margin-bottom: 20px;
+  }
+  
+  .search-form {
+    display: flex;
+    gap: 10px;
+
+  }
+  
+  .search-form select, .search-form button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color:rgb(1, 10, 10);
+  }
+  
+  .board-section, .categories, .contact {
+    padding: 90px 50px;
+    text-align: center;
+    
+  }
+  .categories{
+h2{font-size: 30px;
+   text-decoration:underline;
+
+  }}
+  .board-section{
+    width: 100%;
+    font-size:30px;
+    color:black;
+    margin-bottom: 50px;
+    
+  }
+  .board {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .board-member img, .board-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ddd;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .grid div {
+    padding: 10px;
+    background: rgb(173, 173, 177);
+    border-radius: 5px;
+    text-align: center;
+    image-rendering:20px;
+    color: rgb(0, 0, 0);
+    
+  }
+  
+  .contact form  {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 05px;
+    padding:100px;
+  }
+
+  .contact{
+
+    background-color: #333;
+    color: white;
+    padding: 0 0 40px 0;
+    width: 100%;
+    
+  }
+  /* General Form Styling */
+.styled-form {
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #ff5e78;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input Fields */
+.styled-form input, 
+.styled-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Focus Effect */
+.styled-form input:focus, 
+.styled-form textarea:focus {
+  border-color: #ff5e78;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 94, 120, 0.5);
+}
+
+/* Textarea */
+.styled-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit Button */
+.styled-form button {
+  width: 100%;
+  align-items: center;
+  padding: 12px;
+  background: #ff5e78;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.styled-form button:hover {
+  background: #e64a5d;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .styled-form {
+      width: 90%;
+  }
+}
+
+  
+  .board {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Space between images */
+    font-size: 20px;
+}
+
+.board-member img {
+    width: 200px;  /* Increase image size */
+    height: 200px; /* Make it equal to width for a perfect circle */
+    border-radius: 50%; /* Circle frame */
+    object-fit: cover; /* Ensure the image fits well inside the circle */
+    border: 4px solid #ff5e78; /* Optional: Add a border */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.board-member img:hover {
+    transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+
+</style>
+</head>
 <body>
-<h1>My Portfolio</h1>
-<p>Hello My name is Sulaiman and i'm graduted on Bsc at SIASC </p>
+  <header class="navbar">
+    <div class="logo"><h2>Intellect</h2></div>
+    <nav>
+      <ul>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Platforms</a></li>
+        <li><a href="#">Insights</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Our superpower is our people</h1>
+      <p>Innovation starts with ideas, and that’s what our builders are good at: raising the bar and changing the world.</p>
+      <form class="search-form">
+        <select>
+          <option selected>Senior Graphic Designer</option>
+        </select>
+        <select>
+          <option selected>Chennai, India</option>
+        </select>
+        <button type="submit">Search Job</button>
+      </form>
+    </div>
+    <div class="hero-image">
+      <img src="team.jpg.jpeg" alt="Team Working Together">
+    </div>
+  </section>
+
+  <section class="board-section">
+    <h2>Board of Director'</h2>
+    <div class="board">
+        <div class="board-member">
+            <img src="luck.jpg" alt="Lucky Baskar">
+            <p>Lucky Baskar</p>
+        </div>
+        <div class="board-member">
+            <img src="legend.jpg" alt="Dave Ravell">
+            <p>Legend</p>
+        </div>
+        <div class="board-member">
+            <img src="Dolly.jpeg" alt="Dolly">
+            <p>Mama pal nakki</p>
+        </div>
+    </div>
+</section>
+
+
+  <section class="categories">
+    <h2>Explore Categories</h2>
+    <div class="grid">
+      <div>Business Development</div>
+      <div>Design</div>
+      <div>Marketing</div>
+      <div>Professional Services </div>
+      <div>Program Management</div>
+      <div>Human Resource</div>
+      <div>Sales</div>
+      <div>Security Engineer</div>
+      <div>Software Development</div>
+      <div>Solution Architect</div>
+      <div>Support Engineer</div>
+      <div>System Development</div>
+      <div>Design</div>
+      <div>Marketing</div>
+      <div>Professional Services </div>
+      <div>Program Management</div>
+      <div>Human Resource</div>
+      <div>Sales</div>
+      <div>Security Engineer</div>
+      <div>Software Development</div>
+      <div>Solution Architect</div>
+      <div>Support Engineer</div>
+      <div>Professional Services </div>
+      <div>Program Management</div>
+    </div>
+  </section>
+
+  <footer class="contact">
+    <h2>Canadian Headquarters</h2>
+    <address>
+      Intellect Design Arena Limited <br>
+      Suite 400, 181 University Avenue, Toronto, ON M5H 3M7, Canada<br>
+      Phone: 1-416-800-0216
+    </address>
+    <form class="styled-form">
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+      <input type="email" placeholder="Email Address">
+      <input type="text" placeholder="Phone">
+      <textarea placeholder="Description"></textarea>
+      <button type="submit">Submit</button>
+  </form>
+  
+    <h1>What people are saying</h1>
+    <h2>"Extermely supportive and Management always stays approachable.<br>
+    They encourage and motivate <br>
+us to develop leadership abilities , your work is <br>
+rewarded and recognized."</h2>
+  </footer>
 </body>
 </html>
